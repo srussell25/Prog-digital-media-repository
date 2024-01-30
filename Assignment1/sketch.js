@@ -48,18 +48,21 @@ square(0,1600,550);
 fill('green');// circle
 stroke(255);
 circle(275,1875,225);
+beginShape();
 fill('red');
-nPointedStar(275, 1875, 5, 175 * (2/3), 75 * (2/3), 3); //actual star
+strokeWeight(3);
 
-}
 
-function nPointedStar(x, y, n, outerRadius, innerRadius){
-  let theta = TAU / n;
-  beginShape();
+vertex(275 - 225 / 2 * cos((5 * PI) / 10) , 1875 - 225 / 2 * sin((5* PI) / 10));
+vertex(275 - 225 / 6 * cos((7 * PI) / 10) , 1875 - 225 / 6 * sin((7* PI) / 10));
+vertex(275 - 225 / 2 * cos((9 * PI) / 10) , 1875 - 225 / 2 * sin((9* PI) / 10));
+vertex(275 - 225 / 6 * cos((11 * PI) / 10) , 1875 - 225 / 6 * sin((11* PI) / 10));
+vertex(275 - 225 / 2 * cos((13 * PI) / 10) , 1875 - 225 / 2 * sin((13* PI) / 10));
+vertex(275 - 225 / 6 * cos((15 * PI) / 10) , 1875 - 225 / 6 * sin((15 * PI) / 10));
+vertex(275 - 225 / 2 * cos((17 * PI) / 10) , 1875 - 225 / 2 * sin((17* PI) / 10));
+vertex(275 - 225 / 6 * cos((19 * PI) / 10) , 1875 - 225 / 6 * sin((19* PI) / 10));
+vertex(275 - 225 / 2 * cos((1 * PI) / 10) , 1875 - 225 / 2 * sin((1* PI) / 10));
+vertex(275 - 225 / 6 * cos((3 * PI) / 10) , 1875 - 225 / 6 * sin((3* PI) / 10));
 
-  for(let i = 0; i < n; i++){
-    vertex(x+ cos(i * theta) * outerRadius, y + sin(i * theta) * outerRadius);
-    vertex(x + cos((i + 0.5) * theta) * innerRadius, y + sin((i + 0.5) * theta) * innerRadius);
-  }
-  endShape(CLOSE);
+endShape(CLOSE);
 }
